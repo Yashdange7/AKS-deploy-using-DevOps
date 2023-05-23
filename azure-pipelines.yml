@@ -6,6 +6,14 @@ resources:
 
 variables:
   imageRepo: sampleapp
+- task: KubernetesManifest@1
+  inputs:
+    action: 'createSecret'
+    connectionType: 'kubernetesServiceConnection'
+    kubernetesServiceConnection: 'DevOps-Pipelines-using-AKS'
+    namespace: 'DefaultK8s'
+    secretType: 'dockerRegistry'
+    secretName: '$(acrsecret)'
   tag: '$(Build.BuildId)'
 
 stages:
