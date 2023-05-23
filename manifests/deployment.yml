@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: yashdangeaksdeployusingdevops 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yashdangeaksdeployusingdevops
+  template:
+    metadata:
+      labels:
+        app: yashdangeaksdeployusingdevops 
+    spec:
+      containers:
+        - name: yashdangeaksdeployusingdevops 
+          image: akscontainerregistry555.azurecr.io/yashdangeaksdeployusingdevops
+          ports:
+          - containerPort: 80
